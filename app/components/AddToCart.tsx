@@ -2,7 +2,8 @@
 
 const AddToCart = () => {
   return (
-    <button onClick={() => console.log('Clicked')}>Add to Cart</button>
+    // Classes come from tailwind daisyUI
+    <button className="btn btn-primary" onClick={() => console.log('Clicked')}>Add to Cart</button>
   )
 }
 
