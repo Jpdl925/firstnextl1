@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "./NavBar";
+import { Suspense } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,11 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    //    Added theme from daisyUI vvv
+    <html lang="en" data-theme="winter">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavBar/>
+        <main className="p-5">
+
+        {/* Suspense is a component that wraps whatever needs a loading prompt, loading.tsx can also be created for a default loading prompt for all pages*/}
+        {/* <Suspense fallback={<p>Loading. . .</p>}> */}
         {children}
+          {/* </Suspense> */}
+
+          </main>
       </body>
     </html>
   );

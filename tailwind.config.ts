@@ -14,5 +14,10 @@ export default {
       },
     },
   },
-  plugins: [require('daisyui')],
+  // vvv Required for adding daisyUI library vvv
+  plugins: [require('daisyui'),],
+  // vvv Adding theme for page vvv
+  daisyui: {
+    themes: ["winter"],
+  },
 } satisfies Config;
